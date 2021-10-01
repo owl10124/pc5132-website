@@ -35,7 +35,7 @@ h1 {
 
 #root {
     display: grid;
-    grid-template-columns: 10vw auto 10vw;
+    grid-template-columns: 25vw auto 5vw;
     width: 100%;
 }
 
@@ -56,9 +56,9 @@ h1 {
 
 .full {
     padding: 32px;
-    /*border: 1px black solid;*/
     overflow-x: auto;
     max-width: 100%;
+    
 }
 
 .full.invert {
@@ -73,11 +73,11 @@ h1 {
 }
 .full.star {
     text-align: center;
-    background: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19821-nustar_xrt_sun.jpg");
+    background-image: url("/static/sun.jpg");
     background-size: cover;
     background-attachment: fixed;
     box-shadow: black 0 0 32px 8px inset;
-    text-shadow: black 0 0 2px;
+    text-shadow: black 0 2px 2px;
 }
 
 .full.invert .full {
@@ -93,12 +93,17 @@ h1 {
 .header {
     position: sticky;
     top: 0;
-    /*border: 1px black solid;*/
+    overflow: visible;
+    white-space: nowrap;
     background-color: #fffc;
     margin: 0;
     padding: 16px;
     z-index: 4;
     grid-row: 1/2;
+}
+
+.header.left {
+    z-index: 5;
 }
 
 img {
@@ -123,7 +128,7 @@ blockquote {
 
 .mathjax-block {
     /*max-width: 100px;*/
-    overflow: scroll;
+    overflow: auto;
 }
 
 @media screen and (max-width: 684px) {
@@ -133,4 +138,65 @@ blockquote {
     .full {
         padding: 16px;
     }
+    .left.container, .right.container, .center.header {
+        display: none;
+    }
+    .left.header {
+        grid-column: 2/3;
+    }
+}
+
+#title-lbl {
+    overflow:auto;
+}
+
+.outline-div {
+    padding: 16px;
+    position: fixed;
+    top: 32px;
+    bottom: 0;
+    overflow-y: auto;
+    font-size: .8em;
+    width: 25vw;
+    box-sizing: border-box;
+    text-align: left;
+}
+#outline ul {
+    padding-left: 1em;
+}
+#outline {
+    padding: 0.5em;
+}
+#outline .selected {
+    font-weight: bold;
+}
+#outline .selected a {
+    text-decoration: none;
+}
+#outline .selected ul {
+    font-weight: initial;
+}
+
+/* thanks https://thecodeplayer.com/walkthrough/css3-family-tree */
+
+#flowchart {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#starchart {
+    position: sticky;
+    top:10px;
+    padding:16px;
+    align-self: center;
+}
+
+#starchart ul {
+    padding-left: .2em;
+    margin-left: .2em;
+    border-left: black 1px solid;
+}
+
+#starchart li {
+    list-style-type: none;
 }

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {%block content%}
 <div class="full invert star">
-    <h1>Stellar Evolution and Heavy Element Formation</h1>
-    <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="#">owl</a> (??) and <a href="#">y<sup>2</sup></a></em></p>
+    <h1 id="intro">Stellar Evolution and Heavy Element Formation</h1>
+    <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="https://owl10124.com">owl</a> (??) and <a href="#">y<sup>2</sup></a></em></p>
 </div>
 <div class="full">
     <div class="full invert star">
@@ -12,9 +12,10 @@
         {% include "partials/preamble.html" %}
     </div>
     <div class="full invert star">
-        <h1>Stellar evolution</h1>
-        <p><em>I haven't the slightest [expletive] clue how to organise this hahaha.</em></p>
-        <p><small>give me a few days</small></p>
+        <p><small>With that in mind, let&#39;s begin:</small></p>
+        <h1 id="stellar-evolution">Stellar evolution</h1>
+        <p>Stellar evolution is <strong>a description of the way that stars change with time</strong>.</p>
+        <p>On human timescales, most stars do not appear to change at all, but if we were to look for billions of years, we would see how stars are <strong>born,</strong> how they <strong>age,</strong> and finally how they <strong>die.</strong></p>
     </div>
     <div class="full">
         {% include "partials/stellar.html" %}
@@ -25,18 +26,51 @@
     <div class="full invert star">
         <p><small>These processes describe the formation of <strong>lighter elements</strong> in stars via nuclear fusion. But <strong>heavier</strong> elements are not <strong>thermodynamically feasible</strong> to synthesise, because the <strong>increase in binding energy</strong> makes their fusion <strong>endothermic.</strong></small></p>
         <p><em>So how do we make <strong>these?</strong></em></p>
-        <h1>Heavy element formation</h1>
+        <h1 id="heavy-element-formation">Heavy element formation</h1>
         <p>i.e. taking things that really don't want to get bigger, and strongarming them into getting bigger anyway</p>
     </div>
     <div class="full">
         {% include "partials/heavy-elem.html" %}
     </div>
+    <div class="full">
+        <p><strong>TL;DR:</strong> fuse atoms to make medium-sized atoms, throw neutrons and protons at big atoms to make bigger atoms, stars do the job for you.</p><p>Something like that.</p>
+        <h1 id="addenda">Addenda</h1>
+        <p>Here's a <a href="/quiz/">quiz</a> and a <a href="/video/">video</a> for the journey.</p>
+        <p>I'd make a terrible star pun here, but I think I have <em>some</em> standards.</p>
+    </div>
 </div>
 <div class="full invert star" style="text-align: center;">
-    <h1>References and acknowledgements</h1>
-    <h2>Starstuff (kai)</h2>
-    <h2>Fusion reactions (owl)</h2>
-    <p>a few really good wikidives</p>
-    <h2>Heavy element formation (y<sup>2</sup>)</h2>
+    {%include "partials/ack.html"%}
 </div>
+
+<script>
+    window.addEventListener("load",()=>{
+        let c1 = 0, c2 = 0;
+
+        function scrollToID(x) {
+            window.scrollTo(0,x.offsetTop);
+        }
+
+        window.addEventListener("scroll",()=>{
+            let y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            let x1 = h1s.findIndex(x=>y<x.offsetTop-16)-1, x2 = h2s.findIndex(x=>y<x.offsetTop-16)-1;
+            if (x1===-2) x1=h1s.length-1; else if (x1===-1) x1=0;
+            if (x2===-2) x2=h2s.length-1; else if (x2===-1) x2=0;
+            if (x1!==c1||x2!==c2) {
+                ols.get(h2s[c2].innerText).classList.remove("selected");
+                c1=x1, c2=x2;
+                document.getElementById("title-lbl").innerText=h1s[c1].innerText;
+                document.getElementById("subtitle-lbl").innerText=(h1s[c1]===h2s[c2]?"":h2s[c2].innerText);
+                ols.get(h2s[x2].innerText).classList.add("selected");
+            }
+        });
+
+        document.body.scroll();
+    });
+
+</script>
+{%endblock%}
+
+{%block flowchart%}
+{%include "partials/starchart.html"%}
 {%endblock%}

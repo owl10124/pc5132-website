@@ -6,16 +6,46 @@
     </head>
 <body>
 <div id="root">
-    <div class="left header"></div>
-    <div class="center header">
-        <strong>Stellar Evolution and Heavy Element Formation</strong> 
+    <div class="left header">
+        <strong id="title-lbl">Stellar Evolution and Heavy Element Formation</strong>
     </div>
-    <div class="right header"></div>
-    <div class="left container" id="flowchart"></div>
+    <div class="center header">
+        <em id="subtitle-lbl"></em>
+    </div>
+    <div class="right header">
+        <span id="fusion-lbl"></span>
+    </div>
+    <div class="left container">
+        <div class="outline-div"><ul id="outline"></ul></div>
+        <script>
+            console.log("no mouth must scream");
+            let out = document.getElementById("outline");
+            window.addEventListener("load",()=>{
+                for (x of h2s) {
+                    let li = document.createElement("li"); let a = document.createElement("a"); a.innerText=x.innerText; a.href="#"+x.id; li.appendChild(a);
+                    ols.set(x.innerText,li);
+                    if (x.tagName==="H1"||!out.lastElementChild) out.appendChild(li); 
+                    else if (out.lastElementChild.lastElementChild.tagName==="UL") out.lastElementChild.lastElementChild.appendChild(li);
+                    else out.lastElementChild.appendChild(document.createElement("ul")), out.lastElementChild.lastElementChild.appendChild(li);
+                }
+                out.firstElementChild.classList.add("selected");
+            });
+        </script>
+    </div>
     <div class="center container" id="content">
         {% block content %}{% endblock %}
     </div>
-    <div class="right container" id="fusion"></div>
+    <div class="right container">
+    </div>
 </div>
+<script>
+    let h1s = Array.from(document.getElementsByTagName("h1"));
+    let h2s = Array.from(document.getElementsByTagName("h2"));
+    let ols = new Map();
+    for (x of h1s) h2s.push(x);
+    h2s.sort((a,b)=>a.offsetTop>b.offsetTop);
+    console.log(h2s);
+        
+</script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+- Molecular cloud
+  - Open cluster
+    - *Helium-4 formation*
+      - Brown dwarf
+      - Low-mass star
+        - *Main sequence*
+          - Red giant
+            - Planetary nebula
+              - White dwarf
+                - Black dwarf
+            - Binary white dwarf
+              - Type Ia supernova
+              - Nova
+      - High-mass star
+        - *Main sequence*
+          - Red supergiant
+            - Type II supernova
+              - Supernova remnant
+              - Black hole
+                - X-ray emission
+              - Neutron star
+                - Pulsar

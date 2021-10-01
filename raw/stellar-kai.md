@@ -1,7 +1,5 @@
 *(I'll edit this later lol)*
 
-Stellar evolution is **a description of the way that stars change with time**. On human timescales, most stars do not appear to change at all, but if we were to look for billions of years, we would see how stars are born, how they age, and finally how they die.
-
 ![img](https://lh4.googleusercontent.com/68gvFVa389HFklEvpowRPhT5DCwIswWQLXA1LQPkX6ohxO-QtmIzxC911EjLDE0oPTKTOBvn1h0IfzlbGrFIho9_FDedWZY1YL7qpZyvlSvGoltbV-SGg9X1mgh9jN6gYy6miLcH=s0)
 
 ## Molecular cloud
@@ -94,7 +92,7 @@ In the past, astronomers thought these new bright lights were new stars, and the
 
 The star can become a sole **white dwarf,** or can **reenter** the binary star system.
 
-## Type 1a supernova
+## Type Ia supernova
 
 A **white dwarf** star pulls matter from a companion star until the dwarf’s dead core **re-ignites** in a thermonuclear explosion that **destroys the star.** This is similar to a nova but the explosion is much more powerful. A Type I supernova has **no hydrogen** in its spectrum. 
 

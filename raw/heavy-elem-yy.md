@@ -1,6 +1,6 @@
 # Heavy element formation
 
-**Heavy elements** refer to elements **heavier than Fe-56.** It is formed through the following three types of nucleosynthesis: **r-process, s-process and p-process.**
+**Heavy elements** refer to elements **heavier than Fe-56.** These are formed through the following three types of nucleosynthesis: **r-process, s-process and p-process.**
 
 ## R-process (rapid neutron-capture process)
 

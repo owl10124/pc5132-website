@@ -35,15 +35,8 @@ h1 {
 
 #root {
     display: grid;
-}
-
-.flex {
-    display: flex;
-    flex-direction: row;
-}
-
-.left, .right {
-    min-width: 10vw;
+    grid-template-columns: 10vw auto 10vw;
+    width: 100%;
 }
 
 .container {
@@ -58,22 +51,43 @@ h1 {
 }
 .center {
     grid-column: 2/3;
+    max-width: 100%;
 }
 
 .full {
     padding: 32px;
     /*border: 1px black solid;*/
+    overflow-x: auto;
+    max-width: 100%;
 }
 
-.invert {
+.full.invert {
     color: white;
     background-color: black;
 }
-.invert a {
+.full.invert a {
     color: #fffc;
 }
-.invert a:hover, .invert a:focus {
+.full.invert a:hover, .invert a:focus {
     color: white;
+}
+.full.star {
+    text-align: center;
+    background: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19821-nustar_xrt_sun.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: black 0 0 32px 8px inset;
+    text-shadow: black 0 0 2px;
+}
+
+.full.invert .full {
+    color: black;
+    background-color: white;
+}
+.full.star .full {
+    text-align: justify;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 .header {
@@ -87,24 +101,36 @@ h1 {
     grid-row: 1/2;
 }
 
-#titlediv {
-    text-align: center;
-    background: url("https://owl10124.com/projects/thumb/reminiscence.jpg");
-    background-size: cover;
-}
-
 img {
-    max-width: 30vw;
+    max-width: 100%;
+    max-height: 50vh;
+    display: block;
+    margin: auto;
 }
 
 blockquote {
     font-style: italic;
     border-left: solid 0.5px;
     margin-left: 1em;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 #content {
-    box-shadow: black 0 0 16px -8px;
+    box-shadow: #0008 0 0 24px -8px;
     margin-bottom: 10vh;
+    min-width: 0;
+}
+
+.mathjax-block {
+    /*max-width: 100px;*/
+    overflow: scroll;
+}
+
+@media screen and (max-width: 684px) {
+    #root {
+        grid-template-columns: 0 100% 0;
+    }
+    .full {
+        padding: 16px;
+    }
 }

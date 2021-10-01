@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stellar evolution</title>
+        <link href="/static/style.css" rel="stylesheet">
+    </head>
+<body>
+<div id="root">
+    <div class="left header"></div>
+    <div class="center header">
+        <strong>Stellar Evolution and Heavy Element Formation</strong> 
+    </div>
+    <div class="right header"></div>
+    <div class="left container" id="flowchart"></div>
+    <div class="center container" id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="right container" id="fusion"></div>
+</div>
+</body>
+</html>

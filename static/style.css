@@ -1,0 +1,110 @@
+@font-face {
+    font-family: "CMU Serif";
+    font-weight: normal;
+    font-style: italic;
+    src: url("/static/fonts/cmunti.woff") format("woff");
+}
+@font-face {
+    font-family: "CMU Serif";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/static/fonts/cmunrm.woff") format("woff");
+}
+@font-face {
+    font-family: "CMU Serif";
+    font-weight: bold;
+    font-style: italic;
+    src: url("/static/fonts/cmunbi.woff") format("woff");
+}
+@font-face {
+    font-family: "CMU Serif";
+    font-weight: bold;
+    font-style: normal;
+    src: url("/static/fonts/cmunbx.woff") format("woff");
+}
+
+html, body {
+    font-family: "CMU Serif";
+    text-align: justify;
+    margin: 0;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+#root {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.left, .right {
+    min-width: 10vw;
+}
+
+.container {
+    grid-row: 2/3;
+}
+
+.left {
+    grid-column: 1/2;
+}
+.right {
+    grid-column: 3/4;
+}
+.center {
+    grid-column: 2/3;
+}
+
+.full {
+    padding: 32px;
+    /*border: 1px black solid;*/
+}
+
+.invert {
+    color: white;
+    background-color: black;
+}
+.invert a {
+    color: #fffc;
+}
+.invert a:hover, .invert a:focus {
+    color: white;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    /*border: 1px black solid;*/
+    background-color: #fffc;
+    margin: 0;
+    padding: 16px;
+    z-index: 4;
+    grid-row: 1/2;
+}
+
+#titlediv {
+    text-align: center;
+    background: url("https://owl10124.com/projects/thumb/reminiscence.jpg");
+    background-size: cover;
+}
+
+img {
+    max-width: 30vw;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: solid 0.5px;
+    margin-left: 1em;
+    padding-left: 2em;
+}
+
+#content {
+    box-shadow: black 0 0 16px -8px;
+    margin-bottom: 10vh;
+}

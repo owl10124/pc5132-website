@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stellar evolution</title>
+        <link href="/static/style.css" rel="stylesheet">
+    </head>
+<body>
+<div id="root">
+    <div class="left header"></div>
+    <div class="center header">
+        <strong>Stellar Evolution and Heavy Element Formation</strong> 
+    </div>
+    <div class="right header"></div>
+    <div class="left container" id="flowchart"></div>
+    <div class="center container" id="content">
+        <div class="full invert" id="titlediv">
+            <h1>Stellar Evolution and Heavy Element Formation</h1>
+            <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="#">owl</a> (??) and <a href="#">y<sup>2</sup></a></em></p>
+        </div>
+        <div class="full">
+            <div class="full invert" style="text-align:center;">
+                {% include "partials/00-intro.html" %}
+            </div>
+            <div class="full">
+                {% include "partials/01-preamble.html" %}
+            </div>
+            <div class="full invert" style="text-align: center;">
+                <h1>Stellar evolution</h1>
+                <p><em>I haven't the slightest [expletive] clue how to organise this hahaha.</em></p>
+                <p><small>give me a few days</small></p>
+            </div>
+            <div class="full">
+                {% include "partials/stellar.html" %}
+            </div>
+            <div class="full">
+                {% include "partials/star-reactions.html" %}
+            </div>
+            <div class="full">
+                aaaaaa
+            </div>
+            <div class="full invert" style="text-align: center;">
+                <h1>Heavy element formation</h1>
+            </div>
+            <div class="full">
+                {% include "partials/heavy-elem.html" %}
+            </div>
+        </div>
+        <div class="full" style="text-align: center;">
+            <h1>References</h1>
+            <p>a few really good wikidives</p>
+        </div>
+    </div>
+    <div class="right container" id="fusion"></div>
+</div>
+</body>
+</html>

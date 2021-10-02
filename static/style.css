@@ -144,6 +144,9 @@ blockquote {
     .left.header {
         grid-column: 2/3;
     }
+    .full.star {
+        background-size: auto;
+    }
 }
 
 .left.header {

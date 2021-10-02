@@ -35,7 +35,7 @@ h1 {
 
 #root {
     display: grid;
-    grid-template-columns: 25vw auto 5vw;
+    grid-template-columns: 15vw auto 5vw;
     width: 100%;
 }
 
@@ -138,7 +138,7 @@ blockquote {
     .full {
         padding: 16px;
     }
-    .left.container, .right.container, .center.header {
+    .left.container, .right.container, .center.header, .right.header {
         display: none;
     }
     .left.header {
@@ -146,8 +146,12 @@ blockquote {
     }
 }
 
+.left.header {
+    overflow:visible;
+}
 #title-lbl {
-    overflow:auto;
+    display: block;
+    overflow: auto;
 }
 
 .outline-div {
@@ -157,7 +161,7 @@ blockquote {
     bottom: 0;
     overflow-y: auto;
     font-size: .8em;
-    width: 25vw;
+    width: 15vw;
     box-sizing: border-box;
     text-align: left;
 }

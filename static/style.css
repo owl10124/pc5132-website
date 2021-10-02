@@ -145,7 +145,7 @@ blockquote {
         grid-column: 2/3;
     }
     .full.star {
-        background-size: auto;
+        background-attachment:scroll;
     }
 }
 

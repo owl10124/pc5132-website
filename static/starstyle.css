@@ -121,9 +121,12 @@
     color:var(--color);
     background-color:var(--bg);
 }
+#starparent > div.untouched {
+    box-shadow: var(--color) -64px 0 64px -64px inset;
+}
 
 #starparent > div.rxn {
     background-color: #fff8;
-    box-shadow: inset black 0 0 12px -4px;
+    box-shadow: inset var(--color) 0 0 12px -4px;
     padding: 8px 24px;
 }

@@ -3,10 +3,6 @@
     <div class="flex" id="starparent">
         {% include "partials/stellar.html"%}
     </div>
-    <p>
-        <em>scroll left/right for more information. I'm so proud of this.</em><br>
-        <small>css tutorial: <a href="https://thecodeplayer.com/walkthrough/css3-family-tree">https://thecodeplayer.com/walkthrough/css3-family-tree</a></small>
-    </p>
 </div>
 <script>
     const starids = new Map();
@@ -31,6 +27,7 @@
             let x = stars.findIndex(x=>y<x.offsetLeft-16);
             if (x<0) x=0;
             if (x!==c) {
+                if (first) first.classList.remove("untouched"), first=null;
                 starids.get(stars[c].id).classList.remove("selected");
                 if (stars[c].id==="beyond-helium") tea.classList.remove("selected");
                 c=x;
@@ -39,7 +36,9 @@
                 starids.get(stars[c].id).scrollIntoView({block:"nearest",inline:"start"});
             }
         });
+
+        sp.children[0].classList.add("untouched");
+        let first = document.getElementsByClassName("untouched")[0];
     });
-    document.body.scroll();
     
 </script>

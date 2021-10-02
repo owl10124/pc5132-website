@@ -8,6 +8,11 @@
 #root {
     grid-template-columns: 10vw auto 10vw;
 }
+@media screen and (max-width: 684px) {
+    #root {
+        grid-template-columns: 0 100% 0;
+    }
+}
 </style>
 {% include "partials/starchart.html"%}
 {%endblock%}

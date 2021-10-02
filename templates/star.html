@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{%block content%}
+<link rel="stylesheet" href="/static/starstyle.css"/>
+<style>
+.outline-div {
+    display: none;
+}
+#root {
+    grid-template-columns: 10vw auto 10vw;
+}
+</style>
+{% include "partials/starchart.html"%}
+{%endblock%}

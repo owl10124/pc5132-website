@@ -1,0 +1,129 @@
+/* thanks https://thecodeplayer.com/walkthrough/css3-family-tree */
+
+#starchart {
+    position: sticky;
+    top:0;
+    padding:16px;
+    background-color: var(--bg);
+    z-index: 8;
+    overflow-x: auto;
+    text-align: left;
+    font-size: .9em;
+}
+
+#starchart ul {
+    margin-left: .4em;
+    display: inline-block;
+    width: max-content;
+    vertical-align: top;
+    padding-left: 0;
+}
+
+#starchart > ul {
+    padding-right: 32px;
+}
+
+#starchart li {
+    list-style-type: none;
+    padding-left: .4em;
+    position: relative;
+}
+
+#starchart a {
+    color: var(--color);
+    border: var(--color) 1px solid;
+    padding: .2em;
+    display: inline-block;
+    position: relative;
+    margin: .2em 0;
+    line-height: 1.4em;
+    height: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#starchart > ul > li > * a::before {
+    content: '';
+    position: absolute;
+    border-top: var(--color) 1px solid;
+    top: 50%;
+    left: -.5em;
+    width: .5em;
+    height: 50%;
+}
+
+#starchart a:not(:only-child)::after {
+    content: '';
+    position: absolute;
+    border-top: var(--color) 1px solid;
+    top: 50%;
+    right: -.5em;
+    width: .5em;
+    height: 50%;
+}
+
+#starchart li:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    border-left: var(--color) 1px solid;
+    top: 0;
+    width: .4em;
+    height: 1.4em;
+}
+
+#starchart li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    border-left: var(--color) 1px solid;
+    bottom: 0;
+    width: .4em;
+    height: 50%;
+}
+#starchart li:not(:first-child):not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    border-left: var(--color) 1px solid;
+    top: 0;
+    width: .4em;
+    height: 100%;
+}
+
+#starchart a:hover, #starchart a:focus, #starchart a.selected {
+    color: var(--bg);
+    background-color: var(--color);
+    text-shadow: none;
+    transition: linear .2s;
+    cursor: pointer;
+}
+
+#starchart a.proc {
+    border: var(--color) 1px dashed;
+    font-style: italic;
+}
+
+#starparent {
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    max-height: 40vw;
+}
+
+#starparent > div {
+    padding: 0 16px;
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: start;
+    overflow: auto;
+    box-sizing: border-box;
+    color:var(--color);
+    background-color:var(--bg);
+}
+
+#starparent > div.rxn {
+    background-color: #fff8;
+    box-shadow: inset black 0 0 12px -4px;
+    padding: 8px 24px;
+}

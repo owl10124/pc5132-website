@@ -1,29 +1,27 @@
 {% extends "base.html" %}
 {%block content%}
-<div class="full invert star">
+<div class="full invert calign star">
     <h1 id="intro">Stellar Evolution and Heavy Element Formation</h1>
     <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="https://owl10124.com">owl</a> (??) and <a href="#">y<sup>2</sup></a></em></p>
 </div>
 <div class="full">
-    <div class="full invert star">
+    <div class="full invert calign star">
         {% include "partials/intro.html" %}
     </div>
     <div class="full">
         {% include "partials/preamble.html" %}
     </div>
-    <div class="full invert star">
+    <div class="full invert calign star">
         <p><small>With that in mind, let&#39;s begin:</small></p>
         <h1 id="stellar-evolution">Stellar evolution</h1>
         <p>Stellar evolution is <strong>a description of the way that stars change with time</strong>.</p>
         <p>On human timescales, most stars do not appear to change at all, but if we were to look for billions of years, we would see how stars are <strong>born,</strong> how they <strong>age,</strong> and finally how they <strong>die.</strong></p>
     </div>
+    <link rel="stylesheet" href="/static/starstyle.css"/>
     <div class="full">
-        {% include "partials/stellar.html" %}
+        {% include "partials/starchart.html"%}
     </div>
-    <div class="full">
-        {% include "partials/star-reactions.html" %}
-    </div>
-    <div class="full invert star">
+    <div class="full invert calign star">
         <p><small>These processes describe the formation of <strong>lighter elements</strong> in stars via nuclear fusion. But <strong>heavier</strong> elements are not <strong>thermodynamically feasible</strong> to synthesise, because the <strong>increase in binding energy</strong> makes their fusion <strong>endothermic.</strong></small></p>
         <p><em>So how do we make <strong>these?</strong></em></p>
         <h1 id="heavy-element-formation">Heavy element formation</h1>
@@ -39,7 +37,7 @@
         <p>I'd make a terrible star pun here, but I think I have <em>some</em> standards.</p>
     </div>
 </div>
-<div class="full invert star" style="text-align: center;">
+<div class="full invert calign star" style="text-align: center;">
     {%include "partials/ack.html"%}
 </div>
 
@@ -57,11 +55,13 @@
             if (x1===-2) x1=h1s.length-1; else if (x1===-1) x1=0;
             if (x2===-2) x2=h2s.length-1; else if (x2===-1) x2=0;
             if (x1!==c1||x2!==c2) {
+                if (!c1) document.getElementById("title-container").classList.remove("first");
                 ols.get(h2s[c2].innerText).classList.remove("selected");
                 c1=x1, c2=x2;
                 document.getElementById("title-lbl").innerText=h1s[c1].innerText;
                 document.getElementById("subtitle-lbl").innerText=(h1s[c1]===h2s[c2]?"":h2s[c2].innerText);
-                ols.get(h2s[x2].innerText).classList.add("selected");
+                if (!c1) document.getElementById("title-container").classList.add("first");
+                ols.get(h2s[c2].innerText).classList.add("selected");
             }
         });
 

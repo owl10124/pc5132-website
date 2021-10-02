@@ -27,6 +27,28 @@ html, body {
     font-family: "CMU Serif";
     text-align: justify;
     margin: 0;
+    --color: var(--light-color);
+    --bg: var(--light-bg);
+    --bgt: #e4cdb9cc;
+    --light-color:#291816;
+    --light-bg: #e4cdb9;
+    --dark-color: #e6dfcc;
+    --dark-bg: #291816;
+    --light-a: #0f60ca;
+    --dark-a: #7bb4ff;
+    --light-af: #488ee9;
+    --dark-af: #cce2ff;
+    --light-av: #5d159c;
+    --dark-av: #c684ff;
+    --light-avf: #693896;
+    --dark-avf: #dab3ff;
+    --a: var(--light-a);
+    --af: var(--light-af);
+    --av: var(--light-av);
+    --avf: var(--light-avf);
+    color: var(--color);
+    background-color: var(--bg);
+    /* wow, what is this, wikipedia? it's almost like we got literally all our content from */
 }
 
 h1 {
@@ -35,7 +57,7 @@ h1 {
 
 #root {
     display: grid;
-    grid-template-columns: 15vw auto 5vw;
+    grid-template-columns: 20vw auto 5vw;
     width: 100%;
 }
 
@@ -58,33 +80,52 @@ h1 {
     padding: 32px;
     overflow-x: auto;
     max-width: 100%;
-    
+    background-color: var(--bg);
+    color: var(--color);
+    /*border-radius: 12px;*/
 }
 
-.full.invert {
-    color: white;
-    background-color: black;
+.invert {
+    --color: var(--dark-color);
+    --bg: var(--dark-bg);
+    --a: var(--dark-a);
+    --av: var(--dark-av);
+    --af: var(--dark-af);
+    --avf: var(--dark-avf);
 }
-.full.invert a {
-    color: #fffc;
-}
-.full.invert a:hover, .invert a:focus {
-    color: white;
-}
-.full.star {
-    text-align: center;
+.star {
     background-image: url("/static/sun.jpg");
     background-size: cover;
     background-attachment: fixed;
-    box-shadow: black 0 0 32px 8px inset;
-    text-shadow: black 0 2px 2px;
+    box-shadow: var(--dark-bg) 0 0 32px 8px inset;
+    text-shadow: var(--dark-bg) 0 2px 2px;
+}
+.calign {
+    text-align: center;
 }
 
-.full.invert .full {
-    color: black;
-    background-color: white;
+.invert .full:not(.invert) {
+    --color: var(--light-color);
+    --bg: var(--light-bg);
+    --a: var(--light-a);
+    --av: var(--light-av);
+    --af: var(--light-af);
+    --avf: var(--light-avf);
 }
-.full.star .full {
+
+a {
+    color: var(--a);
+}
+a:visited {
+    color: var(--av);
+}
+a:focus {
+    color: var(--af);
+}
+a:visited:focus {
+    color: var(--avf);
+}
+.full.star .full:not(.star) {
     text-align: justify;
     box-shadow: none;
     text-shadow: none;
@@ -95,15 +136,15 @@ h1 {
     top: 0;
     overflow: visible;
     white-space: nowrap;
-    background-color: #fffc;
+    background-color: var(--bgt);
     margin: 0;
     padding: 16px;
-    z-index: 4;
+    z-index: 24;
     grid-row: 1/2;
 }
 
 .header.left {
-    z-index: 5;
+    z-index: 25;
 }
 
 img {
@@ -121,9 +162,10 @@ blockquote {
 }
 
 #content {
-    box-shadow: #0008 0 0 24px -8px;
+    box-shadow: var(--dark-bg) 0 0 24px -8px;
     margin-bottom: 10vh;
     min-width: 0;
+    overflow: hidden;
 }
 
 .mathjax-block {
@@ -151,10 +193,14 @@ blockquote {
 
 .left.header {
     overflow:visible;
+
 }
-#title-lbl {
-    display: block;
+#title-container {
     overflow: auto;
+    max-width: 100vw;
+}
+#title-container.first {
+    width: calc(100vw - 32px);
 }
 
 .outline-div {
@@ -164,15 +210,17 @@ blockquote {
     bottom: 0;
     overflow-y: auto;
     font-size: .8em;
-    width: 15vw;
+    width: 20vw;
     box-sizing: border-box;
     text-align: left;
+    
 }
 #outline ul {
     padding-left: 1em;
 }
 #outline {
-    padding: 0.5em;
+    padding: 0;
+    list-style-type: none;
 }
 #outline .selected {
     font-weight: bold;
@@ -184,26 +232,7 @@ blockquote {
     font-weight: initial;
 }
 
-/* thanks https://thecodeplayer.com/walkthrough/css3-family-tree */
-
-#flowchart {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-#starchart {
-    position: sticky;
-    top:10px;
-    padding:16px;
-    align-self: center;
-}
-
-#starchart ul {
-    padding-left: .2em;
-    margin-left: .2em;
-    border-left: black 1px solid;
-}
-
-#starchart li {
-    list-style-type: none;
+.flex {
+    display: flex;
+    flex-direction: row;
 }

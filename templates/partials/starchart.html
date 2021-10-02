@@ -1,102 +1,45 @@
-<div id="starchart">
-<ul>
-    <li>
-        Molecular cloud
-        <ul>
-            <li>
-                Open cluster
-                <ul>
-                    <li>
-                        <em>Helium-4 formation</em>
-                        <ul>
-                            <li>
-                                Brown dwarf
-                            </li>
-                            <li>
-                                Low-mass star
-                                <ul>
-                                    <li>
-                                        <em>Main sequence</em>
-                                        <ul>
-                                            <li>
-                                                Red giant
-                                                <ul>
-                                                    <li>
-                                                        Planetary nebula
-                                                        <ul>
-                                                            <li>
-                                                                White dwarf
-                                                                <ul>
-                                                                    <li>Black dwarf</li>
-
-                                                                </ul>
-                                                            </li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        Binary white dwarf
-                                                        <ul>
-                                                            <li>Type Ia supernova</li>
-                                                            <li>Nova</li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                High-mass star
-                                <ul>
-                                    <li>
-                                        <em>Main sequence</em>
-                                        <ul>
-                                            <li>
-                                                Red supergiant
-                                                <ul>
-                                                    <li>
-                                                        Type II supernova
-                                                        <ul>
-                                                            <li>
-                                                                Supernova remnant
-                                                            </li>
-                                                            <li>
-                                                                Black hole
-                                                                <ul>
-                                                                    <li>X-ray emission</li>
-
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                Neutron star
-                                                                <ul>
-                                                                    <li>Pulsar</li>
-
-                                                                </ul>
-                                                            </li>
-
-                                                        </ul>
-                                                    </li>
-
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                </ul>
-            </li>
-
-        </ul>
-    </li>
-
-</ul>
+<div id="starchart" class="full star invert"><ul><li><a>Molecular cloud</a><ul><li><a>Open cluster</a><ul><li><a class="proc" href="#helium-4-formation">Can it make helium?</a><ul><li><a>Brown dwarf</a></li><li><a>Low-mass star</a><ul><li><a class="proc" href="#beyond-helium" id="tea">Burns a while (make some tea while waiting)</a><ul><li><a>Red giant</a><ul><li><a>Planetary nebula</a><ul><li><a>White dwarf</a><ul><li><a>Black dwarf</a></li></ul></li></ul></li><li><a>Binary white dwarf</a><ul><li><a>Type Ia supernova</a></li><li><a>Nova</a></li></ul></li></ul></li></ul></li></ul></li><li><a>High-mass star</a><ul><li><a class="proc" href="#beyond-helium">Burns a while</a><ul><li><a>Red supergiant</a><ul><li><a>Type II supernova</a><ul><li><a>Supernova remnant</a></li><li><a>Black hole</a><ul><li><a>X-ray emissions</a></li></ul></li><li><a>Neutron star</a><ul><li><a>Pulsar</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></div>
+<div class="full">
+    <div class="flex" id="starparent">
+        {% include "partials/stellar.html"%}
+    </div>
+    <p>
+        <em>scroll left/right for more information. I'm so proud of this.</em><br>
+        <small>css tutorial: <a href="https://thecodeplayer.com/walkthrough/css3-family-tree">https://thecodeplayer.com/walkthrough/css3-family-tree</a></small>
+    </p>
 </div>
+<script>
+    const starids = new Map();
+    window.addEventListener("load",()=>{
+        const sc = document.getElementById("starchart");
+        const sp = document.getElementById("starparent");
+        const tea = document.getElementById("tea");
+        let stars = Array.from(sp.getElementsByTagName("h2"));
+
+        function dfs(a) {
+            if (a.tagName==="A"){
+                if (ols.get(a.innerText)) a.href=ols.get(a.innerText).firstChild.href;
+                if (a.href) starids.set(a.href.substr(a.href.indexOf("#")+1),a);
+            }
+            for (x of a.children) dfs(x);
+        }
+        dfs(sc);
+
+        let c=0;
+        sp.addEventListener("scroll",()=>{
+            let y = sp.scrollLeft || 0;
+            let x = stars.findIndex(x=>y<x.offsetLeft-16);
+            if (x<0) x=0;
+            if (x!==c) {
+                starids.get(stars[c].id).classList.remove("selected");
+                if (stars[c].id==="beyond-helium") tea.classList.remove("selected");
+                c=x;
+                starids.get(stars[c].id).classList.add("selected");
+                if (stars[c].id==="beyond-helium") tea.classList.add("selected");
+                starids.get(stars[c].id).scrollIntoView({block:"nearest",inline:"start"});
+            }
+        });
+    });
+    document.body.scroll();
+    
+</script>

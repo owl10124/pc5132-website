@@ -1,6 +1,14 @@
-<div id="starchart" class="full star invert"><ul><li><a>Molecular cloud</a><ul><li><a>Open cluster</a><ul><li><a class="proc" href="#helium-4-formation">Can it make helium?</a><ul><li><a>Brown dwarf</a></li><li><a>Low-mass star</a><ul><li><a class="proc" href="#beyond-helium" id="tea">Burns a while (make some tea while waiting)</a><ul><li><a>Red giant</a><ul><li><a>Planetary nebula</a><ul><li><a>White dwarf</a><ul><li><a>Black dwarf</a></li></ul></li></ul></li><li><a>Binary white dwarf</a><ul><li><a>Type Ia supernova</a></li><li><a>Nova</a></li></ul></li></ul></li></ul></li></ul></li><li><a>High-mass star</a><ul><li><a class="proc" href="#beyond-helium">Burns a while</a><ul><li><a>Red supergiant</a><ul><li><a>Type II supernova</a><ul><li><a>Supernova remnant</a></li><li><a>Black hole</a><ul><li><a>X-ray emissions</a></li></ul></li><li><a>Neutron star</a><ul><li><a>Pulsar</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></div>
-<div class="flex" id="starparent">
-    {% include "partials/stellar.html"%}
+<div class="full star invert">
+    <div class="calign">
+        <p><small>With that in mind, let&#39;s begin:</small></p>
+        <h1 id="stellar-evolution">Stellar evolution</h1>
+        <p>Stellar evolution is <strong>a description of the way that stars change with time</strong>.</p>
+        <p>On human timescales, most stars do not appear to change at all, but if we were to look for billions of years, we would see how stars are <strong>born,</strong> how they <strong>age,</strong> and finally how they <strong>die.</strong></p>
+    </div>
+    <div id="starchart"><ul><li><a>Molecular cloud</a><ul><li><a>Open cluster</a><ul><li><a class="proc" href="#helium-4-formation">Can it make helium?</a><ul><li><a>Brown dwarf</a></li><li><a>Low-mass star</a><ul><li><a class="proc" href="#beyond-helium" id="tea">Burns a while (make some tea while waiting)</a><ul><li><a>Red giant</a><ul><li><a>Planetary nebula</a><ul><li><a>White dwarf</a><ul><li><a>Black dwarf</a></li></ul></li></ul></li><li><a>Binary white dwarf</a><ul><li><a>Type Ia supernova</a></li><li><a>Nova</a></li></ul></li></ul></li></ul></li></ul></li><li><a>High-mass star</a><ul><li><a class="proc" href="#beyond-helium">Burns a while</a><ul><li><a>Red supergiant</a><ul><li><a>Type II supernova</a><ul><li><a>Supernova remnant</a></li><li><a>Black hole</a><ul><li><a>X-ray emissions</a></li></ul></li><li><a>Neutron star</a><ul><li><a>Pulsar</a></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></div>
+    <div class="flex normal" id="starparent">
+        {% include "partials/stellar.html"%}
+    </div>
 </div>
 <script>
     const starids = new Map();
@@ -23,7 +31,7 @@
         sp.addEventListener("scroll",()=>{
             let y = sp.scrollLeft || 0;
             let x = stars.findIndex(x=>y<x.offsetLeft-16);
-            if (x<0) x=0;
+            if (x<0) x=stars.length-1;
             if (x!==c) {
                 if (first) first.classList.remove("untouched"), first=null;
                 starids.get(stars[c].id).classList.remove("selected");
@@ -35,6 +43,7 @@
             }
         });
 
+        sc.children[0].children[0].children[0].classList.add("selected");
         sp.children[0].classList.add("untouched");
         let first = document.getElementsByClassName("untouched")[0];
     });

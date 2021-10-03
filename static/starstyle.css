@@ -1,14 +1,13 @@
 /* thanks https://thecodeplayer.com/walkthrough/css3-family-tree */
 
 #starchart {
-    position: sticky;
-    top:0;
     padding:16px;
-    background-color: var(--bg);
+    /*background-color: var(--bg);*/
     z-index: 8;
-    overflow-x: auto;
+    overflow: auto;
     text-align: left;
     font-size: .9em;
+    max-height: 30vh;
 }
 
 #starchart ul {
@@ -91,12 +90,18 @@
     height: 100%;
 }
 
-#starchart a:hover, #starchart a:focus, #starchart a.selected {
-    color: var(--bg);
-    background-color: var(--color);
+#starchart a:hover, #starchart a:focus {
+    color: white;
+    border-color: white;
+    background-color: #fff8;
+}
+
+#starchart a.selected {
     text-shadow: none;
     transition: linear .2s;
     cursor: pointer;
+    color: var(--light-color);
+    background-color: var(--light-bg);
 }
 
 #starchart a.proc {
@@ -108,7 +113,9 @@
     width: 100%;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    max-height: 40vw;
+    height: 50vh;
+    color: var(--color);
+    background-color: var(--bg);
 }
 
 #starparent > div {
@@ -118,8 +125,6 @@
     scroll-snap-align: start;
     overflow: auto;
     box-sizing: border-box;
-    color:var(--color);
-    background-color:var(--bg);
 }
 #starparent > div.untouched {
     box-shadow: var(--color) -64px 0 64px -64px inset;

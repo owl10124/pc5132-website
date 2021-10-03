@@ -6,5 +6,5 @@ def index():
     return render_template("index.html")
 
 @app.route("/star/")
-def about():
+def star():
     return render_template("star.html")

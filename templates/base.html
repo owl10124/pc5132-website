@@ -48,6 +48,7 @@
     <script>
         let h1s = Array.from(document.getElementsByTagName("h1"));
         let h2s = Array.from(document.getElementsByTagName("h2"));
+        h2s = h2s.filter(x=>x.parentElement.parentElement.id!=="starparent");
         let ols = new Map();
         for (x of h1s) h2s.push(x);
         function comp(a, b) { //copied from https://stackoverflow.com/questions/31991235/sort-elements-by-document-order-in-javascript/31992057

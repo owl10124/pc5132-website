@@ -34,14 +34,14 @@ html, body {
     --light-bg: #e4cdb9;
     --dark-color: #e6dfcc;
     --dark-bg: #291816;
-    --light-a: #0f60ca;
-    --dark-a: #7bb4ff;
-    --light-af: #488ee9;
-    --dark-af: #cce2ff;
-    --light-av: #5d159c;
-    --dark-av: #c684ff;
-    --light-avf: #693896;
-    --dark-avf: #dab3ff;
+    --light-a: #b62d0b;
+    --dark-a: #e79169;
+    --light-af: #ec5845;
+    --dark-af: #ffdccc;
+    --light-av: #641227;
+    --dark-av: #e796d4;
+    --light-avf: #96385f;
+    --dark-avf: #ffb3dd;
     --a: var(--light-a);
     --af: var(--light-af);
     --av: var(--light-av);
@@ -120,10 +120,10 @@ a {
 a:visited {
     color: var(--av);
 }
-a:focus {
+a:hover, a:focus {
     color: var(--af);
 }
-a:visited:focus {
+a:visited:hover, a:visited:focus {
     color: var(--avf);
 }
 .normal {

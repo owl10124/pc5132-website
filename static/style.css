@@ -43,6 +43,8 @@ html, body {
     --light-avf: #96385f;
     --dark-avf: #ffb3dd;
     --tint: #fff8;
+    --colorer: #140705;
+    --colorert: #14070522;
     --a: var(--light-a);
     --af: var(--light-af);
     --av: var(--light-av);
@@ -261,6 +263,10 @@ blockquote {
         --light-avf: #ffb3dd;
         --dark-avf: #ffb3dd;
         --tint: #0008;
+        --colorer: #fff5da;
+        --colorert: #fff5da22;
     }
-
+    img {
+        filter: invert(1) hue-rotate(180deg); /*this is a hack, pls don't try at home*/
+    }
 }

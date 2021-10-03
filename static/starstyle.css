@@ -91,9 +91,9 @@
 }
 
 #starchart a:hover, #starchart a:focus {
-    color: black;
-    border-color: black;
-    background-color: #0002;
+    color: var(--colorer);
+    border-color: var(--colorer);
+    background-color: var(--colorert);
 }
 
 #starchart a.selected {

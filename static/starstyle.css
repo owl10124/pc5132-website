@@ -91,17 +91,17 @@
 }
 
 #starchart a:hover, #starchart a:focus {
-    color: white;
-    border-color: white;
-    background-color: #fff8;
+    color: black;
+    border-color: black;
+    background-color: #0002;
 }
 
 #starchart a.selected {
     text-shadow: none;
     transition: linear .2s;
     cursor: pointer;
-    color: var(--light-color);
-    background-color: var(--light-bg);
+    color: var(--bg);
+    background-color: var(--color);
 }
 
 #starchart a.proc {
@@ -131,7 +131,6 @@
 }
 
 #starparent > div.rxn {
-    background-color: #fff8;
-    box-shadow: inset var(--color) 0 0 12px -4px;
+    box-shadow: inset var(--dark-bg) 0 0 12px -4px;
     padding: 8px 24px;
 }

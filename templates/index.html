@@ -2,20 +2,25 @@
 {%block content%}
 <div class="full invert calign star">
     <h1 id="intro">Stellar Evolution and Heavy Element Formation</h1>
-    <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="https://owl10124.com">owl</a> (??) and <a href="#">y<sup>2</sup></a></em></p>
+    <p><em>brought (?) to you (?) by <a href="#">kai</a>, <a href="https://owl10124.com">owl</a> (??) and <a
+                href="#">y<sup>2</sup></a></em></p>
 </div>
 <div class="full">
-    <div class="full invert calign star">
+    <div class="full invert calign">
         {% include "partials/intro.html" %}
     </div>
     <div class="full">
         {% include "partials/preamble.html" %}
     </div>
-    <link rel="stylesheet" href="/static/starstyle.css"/>
+    <link rel="stylesheet" href="/static/starstyle.css" />
     {% include "partials/starchart.html"%}
     <p><em>Scroll left / right for more information.</em></p>
+    <div class="full">
+        <p>These processes describe the formation of <strong>lighter elements</strong> in stars via nuclear fusion. But
+            <strong>heavier</strong> elements are not <strong>thermodynamically feasible</strong> to synthesise, because
+            the <strong>increase in binding energy</strong> makes their fusion <strong>endothermic.</strong></p>
+    </div>
     <div class="full invert calign star">
-        <p><small>These processes describe the formation of <strong>lighter elements</strong> in stars via nuclear fusion. But <strong>heavier</strong> elements are not <strong>thermodynamically feasible</strong> to synthesise, because the <strong>increase in binding energy</strong> makes their fusion <strong>endothermic.</strong></small></p>
         <p><em>So how do we make <strong>these?</strong></em></p>
         <h1 id="heavy-element-formation">Heavy element formation</h1>
         <p>i.e. taking things that really don't want to get bigger, and strongarming them into getting bigger anyway</p>
@@ -23,15 +28,19 @@
     <div class="full">
         {% include "partials/heavy-elem.html" %}
     </div>
-    <div class="full">
-        <p><strong>TL;DR:</strong> fuse atoms to make medium-sized atoms, throw neutrons and protons at big atoms to make bigger atoms, stars do the job for you.</p><p>Something like that.</p>
+    <div class="full invert">
         <h1 id="addenda">Addenda</h1>
-        <p>Here's a couple of materials for the journey. I'd make a terrible star pun here, but I think I have <em>some</em> standards.</p>
+        <p>Here's a couple of materials for the journey. I'd make a terrible star pun here, but I think I have
+            <em>some</em> standards.</p>
 
         <h2>Video</h2>
-        <p>I hope my groupmates have a plan here, because I definitively do not. In the meantime here's an acceptable placeholder.</p>
+        <p>I hope my groupmates have a plan here, because I definitively do not. In the meantime here's an acceptable
+            placeholder.</p>
 
-        <iframe id="vid" width="560" height="315" src="https://www.youtube.com/embed/-qgreAUpPwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="vid" width="560" height="315" src="https://www.youtube.com/embed/-qgreAUpPwM"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         <style>
             #vid {
                 max-width: 100%;
@@ -51,24 +60,24 @@
 </div>
 
 <script>
-    window.addEventListener("load",()=>{
+    window.addEventListener("load", () => {
         let c1 = 0, c2 = 0;
 
         function scrollToID(x) {
-            window.scrollTo(0,x.offsetTop);
+            window.scrollTo(0, x.offsetTop);
         }
 
-        window.addEventListener("scroll",()=>{
+        window.addEventListener("scroll", () => {
             let y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-            let x1 = h1s.findIndex(x=>y<x.offsetTop-16)-1, x2 = h2s.findIndex(x=>y<x.offsetTop-16)-1;
-            if (x1===-2) x1=h1s.length-1; else if (x1===-1) x1=0;
-            if (x2===-2) x2=h2s.length-1; else if (x2===-1) x2=0;
-            if (x1!==c1||x2!==c2) {
+            let x1 = h1s.findIndex(x => y < x.offsetTop - 16) - 1, x2 = h2s.findIndex(x => y < x.offsetTop - 16) - 1;
+            if (x1 === -2) x1 = h1s.length - 1; else if (x1 === -1) x1 = 0;
+            if (x2 === -2) x2 = h2s.length - 1; else if (x2 === -1) x2 = 0;
+            if (x1 !== c1 || x2 !== c2) {
                 if (!c1) document.getElementById("title-container").classList.remove("first");
                 ols.get(h2s[c2].innerText).classList.remove("selected");
-                c1=x1, c2=x2;
-                document.getElementById("title-lbl").innerText=h1s[c1].innerText;
-                document.getElementById("subtitle-lbl").innerText=(h1s[c1]===h2s[c2]?"":h2s[c2].innerText);
+                c1 = x1, c2 = x2;
+                document.getElementById("title-lbl").innerText = h1s[c1].innerText;
+                document.getElementById("subtitle-lbl").innerText = (h1s[c1] === h2s[c2] ? "" : h2s[c2].innerText);
                 if (!c1) document.getElementById("title-container").classList.add("first");
                 ols.get(h2s[c2].innerText).classList.add("selected");
             }

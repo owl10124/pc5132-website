@@ -24,20 +24,6 @@
             <div class="outline-div">
                 <ul id="outline"></ul>
             </div>
-            <script>
-                console.log("no mouth must scream");
-                let out = document.getElementById("outline");
-                window.addEventListener("load", () => {
-                    for (x of h2s) {
-                        let li = document.createElement("li"); let a = document.createElement("a"); a.innerText = x.innerText; a.href = "#" + x.id; li.appendChild(a);
-                        ols.set(x.innerText, li);
-                        if (x.tagName === "H1" || !out.lastElementChild) out.appendChild(li);
-                        else if (out.lastElementChild.lastElementChild.tagName === "UL") out.lastElementChild.lastElementChild.appendChild(li);
-                        else out.lastElementChild.appendChild(document.createElement("ul")), out.lastElementChild.lastElementChild.appendChild(li);
-                    }
-                    out.firstElementChild.classList.add("selected");
-                });
-            </script>
         </div>
         <div class="center container" id="content">
             {% block content %}{% endblock %}
@@ -48,18 +34,29 @@
     <script>
         let h1s = Array.from(document.getElementsByTagName("h1"));
         let h2s = Array.from(document.getElementsByTagName("h2"));
-        h2s = h2s.filter(x=>x.parentElement.parentElement.id!=="starparent");
         let ols = new Map();
         for (x of h1s) h2s.push(x);
         function comp(a, b) { //copied from https://stackoverflow.com/questions/31991235/sort-elements-by-document-order-in-javascript/31992057
-          if (a === b) return 0;
-          let p = a.compareDocumentPosition(b);
-          if (p & Node.DOCUMENT_POSITION_FOLLOWING || p & Node.DOCUMENT_POSITION_CONTAINED_BY) return -1;
-          else if (p & Node.DOCUMENT_POSITION_PRECEDING || p & Node.DOCUMENT_POSITION_CONTAINS) return 1;
-          else return 0;
+            if (a === b) return 0;
+            let p = a.compareDocumentPosition(b);
+            if (p & Node.DOCUMENT_POSITION_FOLLOWING || p & Node.DOCUMENT_POSITION_CONTAINED_BY) return -1;
+            else if (p & Node.DOCUMENT_POSITION_PRECEDING || p & Node.DOCUMENT_POSITION_CONTAINS) return 1;
+            else return 0;
         }
         h2s.sort(comp);
-        console.log(h2s);
+
+        let out = document.getElementById("outline");
+        for (x of h2s) {
+            let li = document.createElement("li"); let a = document.createElement("a"); a.innerText = x.innerText; a.href = "#" + x.id; li.appendChild(a);
+            ols.set(x.innerText, li);
+            if (x.tagName === "H1" || !out.lastElementChild) out.appendChild(li);
+            else if (out.lastElementChild.lastElementChild.tagName === "UL") out.lastElementChild.lastElementChild.appendChild(li);
+            else out.lastElementChild.appendChild(document.createElement("ul")), out.lastElementChild.lastElementChild.appendChild(li);
+        }
+        out.firstElementChild.classList.add("selected");
+
+        const stel = ols.get("Stellar evolution");
+        ols.forEach(x=>{if (x.parentElement.parentElement===stel) x.style.display="none"});
 
     </script>
 </body>

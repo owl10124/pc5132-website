@@ -42,6 +42,7 @@ html, body {
     --dark-av: #e796d4;
     --light-avf: #96385f;
     --dark-avf: #ffb3dd;
+    --tint: #fff8;
     --a: var(--light-a);
     --af: var(--light-af);
     --av: var(--light-av);
@@ -86,13 +87,15 @@ h1 {
     box-sizing: border-box;
 }
 
-.invert {
+.invert, .rxn {
     --color: var(--dark-color);
     --bg: var(--dark-bg);
     --a: var(--dark-a);
     --av: var(--dark-av);
     --af: var(--dark-af);
     --avf: var(--dark-avf);
+    background-color: var(--bg);
+    color: var(--color);
 }
 .star {
     background-image: url("/static/sun.jpg");
@@ -112,6 +115,11 @@ h1 {
     --av: var(--light-av);
     --af: var(--light-af);
     --avf: var(--light-avf);
+    background-color: var(--bg);
+    color: var(--color);
+    text-align: justify;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 a {
@@ -126,18 +134,13 @@ a:hover, a:focus {
 a:visited:hover, a:visited:focus {
     color: var(--avf);
 }
-.normal {
-    text-align: justify;
-    box-shadow: none;
-    text-shadow: none;
-}
 
 .header {
     position: sticky;
     top: 0;
     overflow: visible;
     white-space: nowrap;
-    background-color: var(--bgt);
+    background-color: var(--bg);
     margin: 0;
     padding: 16px;
     z-index: 24;
@@ -239,4 +242,25 @@ blockquote {
 .flex {
     display: flex;
     flex-direction: row;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        --bgt: #e4cdb9cc;
+        --light-color:#e6dfcc;
+        --light-bg: #291816;
+        --dark-color: #fff4d7;
+        --dark-bg: #130301;
+        --light-a: #e79169;
+        --dark-a: #e79169;
+        --light-af: #ffdccc;
+        --dark-af: #ffdccc;
+        --light-av: #e796d4;
+        --dark-av: #e796d4;
+        --light-avf: #ffb3dd;
+        --dark-avf: #ffb3dd;
+        --tint: #0008;
+    }
+
 }

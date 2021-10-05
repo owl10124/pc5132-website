@@ -35,30 +35,37 @@
     display: inline-block;
     position: relative;
     margin: .2em 0;
-    line-height: 1.4em;
-    height: 2em;
+    /*line-height: 1.4em;*/
     box-sizing: border-box;
     text-decoration: none;
+    /*height: 2em;*/
+    min-width: 6em;
+}
+
+#starchart a img {
+    filter: none;
+    min-width: 100%;
+    width: 0;
+    padding-top: .2em;
+    border-top: var(--color) 1px solid;
 }
 
 #starchart > ul > li > * a::before {
     content: '';
     position: absolute;
     border-top: var(--color) 1px solid;
-    top: 50%;
+    top: .8em;
     left: -.5em;
     width: .5em;
-    height: 50%;
 }
 
 #starchart a:not(:only-child)::after {
     content: '';
     position: absolute;
     border-top: var(--color) 1px solid;
-    top: 50%;
+    top: .8em;
     right: -.5em;
     width: .5em;
-    height: 50%;
 }
 
 #starchart li:not(:first-child)::before {
@@ -68,7 +75,7 @@
     border-left: var(--color) 1px solid;
     top: 0;
     width: .4em;
-    height: 1.4em;
+    height: 1.2em;
 }
 
 #starchart li:not(:last-child)::before {
@@ -78,7 +85,7 @@
     border-left: var(--color) 1px solid;
     bottom: 0;
     width: .4em;
-    height: 50%;
+    height: calc(100% - 1.2em);
 }
 #starchart li:not(:first-child):not(:last-child)::before {
     content: '';

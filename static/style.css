@@ -213,23 +213,28 @@ blockquote {
 }
 
 .outline-div {
-    padding: 16px;
+    padding: 32px 16px 16px 16px;
     position: fixed;
     top: 32px;
     bottom: 0;
     overflow-y: auto;
-    font-size: .8em;
     width: 20vw;
     box-sizing: border-box;
     text-align: left;
-    
 }
 #outline ul {
     padding-left: 1em;
 }
+#outline li {
+    padding-top: .5em;
+    font-size: .9em;
+}
 #outline {
     padding: 0;
     list-style-type: none;
+}
+#outline > li {
+    font-size: 1em;
 }
 #outline .selected {
     font-weight: bold;

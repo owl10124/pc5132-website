@@ -1,6 +1,6 @@
 # Acknowledgements
 
-This website was created by Kailaash (kai), Shevonne (owl) and Ying Ying (y^2^) for their **PC5132 module project.** It is targeted at students with a **rudimentary understanding of nuclear physics** (basically A-level physics students?) and aims to shed light on exactly what the website title suggests.
+This website was created by Kailaash (kai), Shevonne (owl) and Ying Ying (y^2^) for their **PC5132 module project.** It is targeted at students with a **rudimentary understanding of nuclear physics** (basically A-level physics students?) and aims to shed light (haha) on exactly what the website title suggests.
 
 Background image reference: **NASA 'picture of the day'**
 

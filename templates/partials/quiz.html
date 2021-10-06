@@ -1,0 +1,55 @@
+<div id="quizdiv"></div>
+
+<script>
+const parent = document.getElementById("quizdiv");
+const qns = [
+    {
+        "q": "why are you bad at things in general?",
+        "o": [
+            "you don't try hard enough",
+            "you try too hard but you're doing it wrong",
+            "you're fundamentally incapable of being even provisionally functional",
+            "just get better lol"
+        ],
+        "a": 3,
+        "e": "this is where a viable explanation would take up residence if i had one"
+    },
+    {
+        "q": "would the world be better off without you?",
+        "o": [
+            "nah, they're good enough at screwing themselves over without me",
+            "probably",
+            "probably, but why should I care",
+            "I make it a personal aspiration to sow as much destruction in my wake as is physically possible and then some"
+        ],
+        "a": 1,
+        "e": "honestly any answer should be accepted here but I can't be bothered to allow multiple responses"
+    }
+];
+
+function htmlify(c) {
+    let x="", qn=qns[c]; //tilapia data sanitisation. not my problem if they screw things
+    for (r=0;r<qn.o.length;++r) {
+        x+=`<label><input type="radio" id="${c}-${r}" value="${r}" name="${c}">${qn.o[r]}</label><br>`;
+    }
+    return `<p>${qn.q}</p>\n<div>`+x+`</div><br><button onclick="submit(${c})">Submit</button><p id="${c}-para"></p></div>`;
+}
+
+function submit(c,e) {
+    let ans = document.querySelector(`input[name='${c}']:checked`).value;
+    document.getElementById(`${c}-para`).innerHTML = (qns[c].a==ans ? "<strong>Correct!</strong><br><em>You'll live to see another day. Or you might not. Why bother, when it's all the same in the end?</em>" : `<strong>Incorrect</strong><br><em>as if you're capable of anything else, you worthless piece of human</em><br>Correct option: <strong>${qns[c].o[qns[c].a]}</strong>`)+"<br><br>"+qns[c].e;
+    //horror of horrors, the '==' instead of '===' here is actually pertinent
+}
+
+for (i=0;i<qns.length;++i) {
+    let t = document.createElement("div");
+    t.innerHTML=htmlify(i);
+    parent.appendChild(t);
+}
+</script>
+
+<style>
+    #quizdiv > div {
+        margin-bottom: 64px;
+    }
+</style>

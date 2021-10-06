@@ -33,24 +33,16 @@
         <p>Here&#8217;s a couple of materials for the journey. I&#8217;d make a terrible star pun here, but I think I have
             <em>some</em> standards.</p>
 
-        <h2>Video</h2>
+        <h2 id="video">Video</h2>
         <p>I hope my groupmates have a plan here, because I definitively do not. In the meantime here&#8217;s an acceptable
             placeholder.</p>
 
-        <iframe id="vid" width="560" height="315" src="https://www.youtube.com/embed/-qgreAUpPwM"
+        <iframe id="vid" width="560" height="315" style="max-width: 100%; display: block; margin: auto;" src="https://www.youtube.com/embed/-qgreAUpPwM"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-        <style>
-            #vid {
-                max-width: 100%;
-                display: block;
-                margin: auto;
-            }
-        </style>
-
-        <h2>Quiz</h2>
-        <p>tba lol</p>
+        <h2 id="quiz">Quiz</h2>
+        {% include "partials/quiz.html" %}
         <div>
         </div>
     </div>

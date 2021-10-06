@@ -137,6 +137,24 @@ a:visited:hover, a:visited:focus {
     color: var(--avf);
 }
 
+button {
+    border: 1px var(--color) solid;
+    color: inherit;
+    background-color: inherit;
+    padding: 4px;
+    margin: .2em auto;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+button:hover, button:focus {
+    text-shadow: none;
+    transition: linear .2s;
+    color: var(--bg);
+    background-color: var(--color);
+}
+
 .header {
     position: sticky;
     top: 0;

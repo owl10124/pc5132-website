@@ -79,6 +79,10 @@ h1 {
     max-width: 100%;
 }
 
+.center.header {
+    box-shadow: var(--dark-bg) 0 8px 24px -16px;
+}
+
 .full {
     padding: 32px;
     overflow-x: auto;

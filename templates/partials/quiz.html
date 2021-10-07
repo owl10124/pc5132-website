@@ -38,7 +38,7 @@ function htmlify(c) {
 
 function submit(c,e) {
     let ans = document.querySelector(`input[name='${c}']:checked`).value;
-    document.getElementById(`${c}-para`).innerHTML = (qns[c].a==ans ? "<strong>Correct!</strong><br><em>You'll live to see another day. Or you might not. Why bother, when it's all the same in the end?</em>" : `<strong>Incorrect</strong><br><em>as if you're capable of anything else, you worthless piece of human</em><br>Correct option: <strong>${qns[c].o[qns[c].a]}</strong>`)+"<br><br>"+qns[c].e;
+    document.getElementById(`${c}-para`).innerHTML = (qns[c].a==ans ? "<strong>Correct!</strong><br><em>You&#8217;ll live to see another day. Or you might not. Why bother, when it&#8217;s all the same in the end?</em>" : `<strong>Incorrect</strong><br><em>as if you're capable of anything else, you worthless piece of human</em><br>Correct option: <strong>${qns[c].o[qns[c].a]}</strong>`)+"<br><br>"+qns[c].e;
     //horror of horrors, the '==' instead of '===' here is actually pertinent
 }
 

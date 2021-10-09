@@ -4,6 +4,28 @@
 const parent = document.getElementById("quizdiv");
 const qns = [
     {
+        "q": "When will a star die?",
+        "o": [
+            "When it feels society's pressure and no longer wants to exist",
+            "When it cools down too much",
+            "When its mass increases enough for gravity to crush the star",
+            "When it uses up all its fuel"
+        ],
+        "a": 3,
+        "e": "The star uses up all its fuel, i.e. no fusion of elements occurs to provide energy for the star. Hence, there is no outwards thermal pressure to counter the dense star's gravity. The outer layers collapse, resulting in the death of the star. Its mass usually doesn&#8217;t increase but <strong>decreases</strong> over time, due to ejection of matter or loss of <strong>electromagnetic radiation;</strong> certainly mass can be accreted from companion stars, but this is an exception from the norm.</p><p><small>by kai</small>"
+    },
+    {
+        "q": "What determines the classification of main sequence star formed?",
+        "o": [
+            "The presence of other stars in the vicinity",
+            "The mass of the star at that point in time",
+            "The initial composition of the star&#8217;s core",
+            "It&#8217;s 2021, we get to identify as anything we want"
+        ],
+        "a": 1,
+        "e": "The ability to sustain fusion within the core of the star is dependent on the mass of the star. Heavier stars reach <strong>sufficiently high core temperatures</strong> for thermonuclear reactions to take place, supporting it against further gravitational contraction, reaching an equilibrium. Lighter stars cannot sustain these reactions, eventually losing all heat and forming — well — a useless piece of mass.</p><p><small>by kai</small>"
+    },
+    {
         "q": "Why must the <strong>triple-alpha process</strong> be considered separately from the <strong>alpha ladder</strong>?",
         "o": [
             "Beryllium-8 is highly unstable and will decompose back into alpha particles quickly",
@@ -12,7 +34,7 @@ const qns = [
             "The triple-alpha process is endothermic, while the alpha ladder is exothermic"
         ],
         "a": 0,
-        "e": "On the Z=N line of nuclei with equal numbers of <strong>protons</strong> and <strong>neutrons</strong>, most elements with <strong>even atomic numbers</strong> are relatively stable; a notable exception is beryllium-8. Though two alpha particles fuse to form beryllium-8, a <strong>third particle</strong> must fuse with it to form carbon-12, within a very short 8.19e−17 seconds; even then, the resultant carbon-12 is <strong>excited</strong> and will probably decompose anyway. There&#39;s a reason this is the <strong>slow step</strong>!</p><p>But once you have carbon-12, the hard part is done; now the other products are stable, so just add alpha particles one by one.</p><p>The other options are just random nonsense I made up on the spot, really."
+        "e": "On the Z=N line of nuclei with equal numbers of <strong>protons</strong> and <strong>neutrons</strong>, most elements with <strong>even atomic numbers</strong> are relatively stable; a notable exception is beryllium-8. Though two alpha particles fuse to form beryllium-8, a <strong>third particle</strong> must fuse with it to form carbon-12, within a very short 8.19e−17 seconds; even then, the resultant carbon-12 is <strong>excited</strong> and will probably decompose anyway. There&#39;s a reason this is the <strong>slow step</strong>!</p><p>But once you have carbon-12, the hard part is done; now the other products are stable, so just add alpha particles one by one.</p><p>The other options are just random nonsense I made up on the spot, really.</p><p><small>by owl</small>"
     },
     {
         "q": "Would the <strong>CNO cycle</strong> dominate in <strong>lower-mass</strong> or <strong>higher-mass</strong> stars?",
@@ -23,7 +45,7 @@ const qns = [
             "Higher, because their increased mass is due to presence of heavier elements"
         ],
         "a": 2,
-        "e": "The proton-proton chain reaction starts at temperatures around 4MK (megakelvin), making it the dominant energy source in smaller stars; conversely the CNO cycle only begins at 15MK, but becomes dominant at 17MK — larger nuclei require more energy to fuse, but the reaction generally releases more energy.</p><p>Everything else is just wrong. I don&#39;t know what to say."
+        "e": "The proton-proton chain reaction starts at temperatures around 4MK (megakelvin), making it the dominant energy source in smaller stars; conversely the CNO cycle only begins at 15MK, but becomes dominant at 17MK — larger nuclei require more energy to fuse, but the reaction generally releases more energy.</p><p>Everything else is just wrong. I don&#39;t know what to say.</p><p><small>by owl</small>"
     },
     {
         "q": "Which nucleosynthesis process is responsible for the formation of most of the radioactive heavy element isotopes?",
@@ -34,7 +56,7 @@ const qns = [
             "Nuclear fusion"
         ],
         "a": 2,
-        "e": "Many radioactive heavy element isotopes are neutron rich.<br>Nuclear fusion results in the formation of the lighter elements. P-process forms neutron-deficient heavy elements (which can be radioactive). Any radioactive isotopes formed via s-process have very short half-lives. Thus, most of the heavy elements formed by s-process are neutron-rich, stable isotopes. R-process produces neutron-rich heavy element isotopes which are radioactive. As the half-lives for these isotopes are relatively long, this means that they will not decay immediately and make up most of the radioactive heavy element isotopes."
+        "e": "Many radioactive heavy element isotopes are neutron rich.<br>Nuclear fusion results in the formation of the lighter elements. P-process forms neutron-deficient heavy elements (which can be radioactive). Any radioactive isotopes formed via s-process have very short half-lives. Thus, most of the heavy elements formed by s-process are neutron-rich, stable isotopes. R-process produces neutron-rich heavy element isotopes which are radioactive. As the half-lives for these isotopes are relatively long, this means that they will not decay immediately and make up most of the radioactive heavy element isotopes.</p><p><small>by y<sup>2</sup></small>"
     },
     {
         "q": "Which of these processes can be found occurring in a type II supernova?",
@@ -46,7 +68,7 @@ const qns = [
             "R, S and P processes"
         ],
         "a": 2,
-        "e": "R-process can be found in core collapse supernova, which is a type II supernova. P-process can be found in a type II supernova as well. On the other hand, s-process is found in AGB stars."
+        "e": "R-process can be found in core collapse supernova, which is a type II supernova. P-process can be found in a type II supernova as well. On the other hand, s-process is found in AGB stars.</p><p><small>by y<sup>2</sup></small>"
     }
 ];
 

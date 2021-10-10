@@ -183,7 +183,7 @@ img {
 }
 
 blockquote {
-    font-style: italic;
+    /*font-style: italic;*/
     border-left: solid 0.5px;
     margin-left: 1em;
     padding-left: 1em;
@@ -293,7 +293,11 @@ blockquote {
         --colorer: #fff5da;
         --colorert: #fff5da22;
     }
-    img {
+    img:not(.noinvert) {
         filter: invert(1) hue-rotate(180deg); /*this is a hack, pls don't try at home*/
     }
+}
+
+mjx-container {
+    font-size: inherit !important;
 }

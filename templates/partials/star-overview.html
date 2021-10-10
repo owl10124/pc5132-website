@@ -1,0 +1,63 @@
+<p>Stars are essentially little element-factories, right? Tiny (okay, maybe <span class="math inline">\(1.99\times 10^{-31}kg\)</span> is <em>not</em> tiny…) messes of mostly-hydrogen <strong>plasma,</strong> doing their best to make things that are <em>not</em> hydrogen. But, much like the average NUS High student, they’re tiny messes with <em>a lot of issues.</em></p>
+<p>So — as we would any good student — we dissect them.</p>
+<p><img class="noinvert" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Heat_Transfer_in_Stars-en.svg/2880px-Heat_Transfer_in_Stars-en.svg.png" /></p>
+<p style="text-align:center">
+<small>source: Wikipedia, yet again! By Д.Ильин: vectorization - File:Heat Transfer in Stars.png of www.sun.org, CC0, <a href="https://commons.wikimedia.org/w/index.php?curid=103174661">https://commons.wikimedia.org/w/index.php?curid=103174661</a></small>
+</p>
+<h3 id="core">Core</h3>
+<p>The star is <em>heavy,</em> and that means <strong>gravity.</strong> Specifically, it’s getting crushed inwards by its own weight, much like how students collapse under the weight of expectations.</p>
+<p>As a result, the centre of the star gets <strong>very hot</strong> (haha GPE becomes KE) and <strong>very dense</strong>. Until (in a zone called the <strong>core</strong>) it gets hot and dense enough that <strong>fusion</strong> starts happening! This <strong>releases energy</strong> (mostly thermal???) which creates thermal pressure, <strong>counterbalancing</strong> the gravity.</p>
+<blockquote>
+<p>And if fusion <em>stops,</em> the centre <strong>loses energy,</strong> and <strong>contracts,</strong> and <strong>heats up,</strong> and <strong>loses more energy,</strong> and bad feedback loops happen and the core collapses and bad things happen.</p>
+</blockquote>
+<p>In the simplest model, we assume the star is steady-state-ish… somehow. The <strong>outward pressure</strong> from within the star must <strong>equal</strong> the inward gravity, much like how students exert pressure on themselves… okay, this analogy’s falling apart. (Just like the students–) <span class="math display">\[
+\frac{dP}{dr}=-g=-\frac{Gm\rho}{r^2}=-\frac{G\rho\int_0^r4\pi r^2\rho ~dr}{r^2}
+\]</span></p>
+<p>This star is in <strong>stable equilibrium</strong> because if the <strong>fusion rate increases,</strong> the core <strong>expands,</strong> so pressure and temperature would <strong>decrease</strong> and the fusion rate decreases again.</p>
+<h3 id="convection-heat-transfer-via-fluid-movement">Convection (heat transfer via fluid movement)</h3>
+<p>So, deep in the star, you have a little parcel of warm gas. It’s less dense, so it rises, because that’s what warm gas does.</p>
+<p>Its new surroundings have <strong>lower pressure and temperature.</strong> (ratio: <strong>temperature gradient</strong>).</p>
+<ul>
+<li>Pressure means the <strong>parcel</strong> expands and cools (dependent on <strong>heat capacity</strong>).</li>
+<li>Temperature means the <strong>surroundings</strong> cool.</li>
+</ul>
+<p>Now, <strong>convection</strong> occurs if the parcel is <em>still</em> warmer (less dense) than its new surroundings and <strong>rises more.</strong></p>
+<p>Someone quantified this, actually! The <strong>Schwarzschild criterion</strong> relates the <strong>temperature gradient</strong> to the <strong>pressure gradient.</strong> For convection to <strong>not occur,</strong> we need: <span class="math display">\[
+-\frac{dT}{dr}&lt;-\frac1{c_p}\frac{dP}{dr}=\frac g{c_p}
+\]</span> (where <span class="math inline">\(c_p\)</span> is the <strong>heat capacity</strong> of the gas, expanding under <strong>constant pressure</strong>)</p>
+<blockquote>
+<p>A full derivation may be found <a href="https://www.astro.umd.edu/~jph/A320_Convection.pdf">here</a> (<em>not</em> copying that out) but in essence, we assume that:</p>
+<ol type="1">
+<li><span class="math inline">\(Q=0\)</span> (the parcel’s expansion is <strong>adiabatic</strong>). This means <span class="math inline">\(P_{par}V_{par}^\gamma=P_{par}\rho_{par}^{-\gamma}\)</span> is a <strong>constant</strong>. (Where <span class="math inline">\(\rho=\frac1V=\text{density}\)</span>.)</li>
+<li><span class="math inline">\(P_{par}=P_{surr}\)</span> (<strong>pressure equalises</strong> much faster than the parcel moves).</li>
+</ol>
+<p><img src="/static/blob.png" /></p>
+<p style="text-align:center">
+<small>source: <a href="https://www.astro.umd.edu/~jph/A320_Convection.pdf">https://www.astro.umd.edu/~jph/A320_Convection.pdf</a> (the derivation mentioned earlier)</small>
+</p>
+<p>And we want to show that the <strong>density</strong> of the <strong>parcel</strong> eventually becomes <strong>higher</strong> than that of the <strong>star</strong>. So for the same <span class="math inline">\(-dP\)</span> (pressure decrease), we want to show <span class="math inline">\(-d\rho_{parcel}=-d\rho_{adiabatic}\)</span> (density decrease) is <strong>smaller</strong> than <span class="math inline">\(-d\rho_{star}\)</span>.</p>
+<p>So we want to take the inequality <span class="math display">\[
+\left(\frac{dP}{d\rho}\right)_{adiabatic}&gt;\left(\frac{dP}{d\rho}\right)_{star}
+\]</span> and express it in terms of <span class="math inline">\(\frac{dP}{dr}\)</span> and <span class="math inline">\(\frac{dT}{dr}\)</span>.</p>
+<p>Hope you remember your thermodynamics.</p>
+</blockquote>
+<p>Anyway, all that just means that a <strong>steeper temperature gradient</strong> (against <strong>radius</strong>) means <strong>convection</strong> is <strong>more likely.</strong></p>
+<p>Areas where <strong>convection</strong> is the dominant method of <strong>heat transfer</strong> are called… <strong>convection zones!</strong></p>
+<p><small>Properly mathematically modelling stars is hard, though, because turbulence is complicated.</small></p>
+<h3 id="radiation-heat-transfer-via-electromagnetic-emission">Radiation (heat transfer via electromagnetic emission)</h3>
+<p><strong>Radiation zones</strong> are just zones where <strong>radiation</strong> is <strong>dominant,</strong> instead of convection. (Conduction too, sometimes.)</p>
+<p>Remember that equation from earlier? In radiation zones, we have a concrete formulation for <span class="math inline">\(\frac{dT}{dr}\)</span>: <span class="math display">\[
+\frac{dT}{dr}=-\frac{3\kappa\rho L}{(4\pi r^2)(16\sigma_B)T^3}
+\]</span> where (<span class="math inline">\(\kappa,\rho,L\)</span>) refer to (<strong>opacity, density</strong> and <strong>luminosity</strong>) respectively.</p>
+<blockquote>
+<p>How is this derived? I haven’t the slightest clue, but apparently it involves integrating <strong>Fick’s first law</strong> — correlating <strong>diffusive flux</strong> to <strong>concentration gradient</strong> using <span class="math inline">\(J=-D\frac{d\phi}{dx}\)</span> Check some <a href="https://en.wikipedia.org/wiki/Radiation_zone">real sources</a> for actual info please.</p>
+</blockquote>
+<h3 id="temperature-and-luminosity">Temperature and luminosity</h3>
+<p>We can plot stars on a <strong>scatter plot</strong> of <strong>absolute magnitude / luminosity</strong> against <strong>stellar classification / temperature</strong>.</p>
+<p>This graph has been pretty important for the understanding of stellar evolution: the most prominent diagonal (see? there, down there) is known as the <strong>main sequence,</strong> and astute viewers wondered if stars could descend it <strong>over their lifetime.</strong> (Spoiler: yes.)</p>
+<p><img class="noinvert" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/HRDiagram.png" /></p>
+<p style="text-align:center">
+<small>source: how many times must I say Wikipedia? by Richard Powell - The Hertzsprung Russell Diagram, CC BY-SA 2.5, <a href="https://commons.wikimedia.org/w/index.php?curid=1736396">https://commons.wikimedia.org/w/index.php?curid=1736396</a></small>
+</p>
+<h3 id="stellar-nucleosynthesis">Stellar nucleosynthesis</h3>
+<p>is the process happening in stellar <strong>cores</strong> — via which they <strong>release energy,</strong> and in the process create <strong>new atomic nuclei</strong>. <strong>Lighter</strong> elements are made via <strong>nuclear fusion</strong> over stars’ main lifetime, while <strong>heavier</strong> ones are generally formed… later.</p>

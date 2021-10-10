@@ -54,11 +54,3 @@ Nuclei are **positively charged** and really don't like coming together (because
 - For **big nuclei** this might be negative, so the reaction **consumes energy** instead, hence it doesn't happen much.
 
 This process is how you get other elements!
-
-## Stellar nucleosynthesis
-
-is the process via which **stars** create **new atomic nuclei**. Lighter elements are made via **nuclear fusion,** while heavier ones have… other methods.
-
----
-
-With that in mind, let's begin.

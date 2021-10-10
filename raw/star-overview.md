@@ -2,7 +2,7 @@ Stars are essentially little element-factories, right? Tiny (okay, maybe $1.99\t
 
 So — as we would any good student — we dissect them.
 
-<img class="noinvert" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Heat_Transfer_in_Stars-en.svg/2880px-Heat_Transfer_in_Stars-en.svg.png" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Heat_Transfer_in_Stars-en.svg/2880px-Heat_Transfer_in_Stars-en.svg.png" />
 
 <p style="text-align:center"><small>source: Wikipedia, yet again! By Д.Ильин: vectorization - File:Heat Transfer in Stars.png of www.sun.org, CC0, <a href="https://commons.wikimedia.org/w/index.php?curid=103174661">https://commons.wikimedia.org/w/index.php?curid=103174661</a></small></p>
 
